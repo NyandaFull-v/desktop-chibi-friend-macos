@@ -1,0 +1,12 @@
+.build/
+dist/
+DerivedData/
+.DS_Store
+*.xcodeproj/xcuserdata/
+*.xcuserstate
+data/
+logs/
+*.log
+*.zip
+settings.json
+profile.json
