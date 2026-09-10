@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "chibidaful",
+  "displayName": "ちび堕ふる",
+  "spriteSheet": "sprites-v5.png",
+  "coinFile": "coin-v2.png",
+  "animationSheets": {
+    "sitWalk": { "file": "animations-sit-walk-v7.png", "columns": 4, "rows": 2 },
+    "petClimb": { "file": "animations-pet-climb-v6.png", "columns": 4, "rows": 2 },
+    "sleepLookTrip": { "file": "animations-sleep-look-trip-v6.png", "columns": 4, "rows": 3 },
+    "dig": { "file": "animations-dig-v3.png", "columns": 4, "rows": 1 }
+  },
+  "itemAtlases": {
+    "accessory": "items-accessories-v3.png",
+    "sweet": "items-sweets-v3.png",
+    "toy": "items-toys-v3.png"
+  },
+  "columns": 3,
+  "rows": 3,
+  "poses": [
+    "stand",
+    "walk",
+    "dash",
+    "sit",
+    "sleep",
+    "fall",
+    "climb",
+    "joy",
+    "dice"
+  ],
+  "firstPerson": "我",
+  "userName": "ますた",
+  "style": "two-head-tall flat plush chibi",
+  "normalSpeech": [
+    "ますた、なにしてる？",
+    "我はここ。",
+    "ちょっとだけ休む。",
+    "窓の上、よい眺め。",
+    "クッキーの袋は、開けた瞬間だけ少し軽くなる。",
+    "靴ひもは左右で結びやすさが違う気がする。",
+    "鉛筆は六角形だと机から逃げにくい。",
+    "猫の鼻模様は一匹ずつ違う。",
+    "炭酸の泡は、傷のある場所から生まれやすい。",
+    "冷蔵庫の扉は、考えごとを忘れやすい場所。",
+    "ますた、ちゃんと水分とった？",
+    "コインの気配……しない。"
+  ],
+  "maybeSpeech": [
+    "靴下は片方だけ先に乾くよう相談している……たぶん",
+    "クッキーの穴は、焼いている間の避難口……たぶん",
+    "猫じゃらしは夜に少しだけ伸びる……たぶん",
+    "窓の角は、丸いほど眠くなりやすい……たぶん",
+    "消しゴムの角は使うたび別の角を呼んでいる……たぶん"
+  ]
+}
