@@ -1,0 +1,40 @@
+name: Build macOS release
+
+on:
+  push:
+    tags:
+      - "v*-mac"
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: macos-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Validate macOS project
+        run: bash validate-macos.sh
+
+      - name: Build universal app bundle
+        run: bash build-macos.sh
+
+      - name: Prepare release archive
+        run: cp "dist/デスクトップちびフレンド_v0.4.1-mac.zip" "DesktopChibiFriend-macOS-v0.4.1.zip"
+
+      - name: Publish release archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" \
+              "DesktopChibiFriend-macOS-v0.4.1.zip" \
+              --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" \
+              "DesktopChibiFriend-macOS-v0.4.1.zip" \
+              --title "デスクトップちびフレンド macOS v0.4.1" \
+              --notes-file RELEASE_NOTES.md
+          fi
