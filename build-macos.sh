@@ -24,8 +24,8 @@ ditto "$ROOT/Resources" "$BUNDLE/Contents/Resources"
 chmod +x "$BUNDLE/Contents/MacOS/DesktopChibiFriendMac"
 codesign --force --deep --sign - "$BUNDLE"
 
-rm -f "$ROOT/dist/${APP_NAME}_v0.4.1-mac.zip"
-ditto -c -k --keepParent "$BUNDLE" "$ROOT/dist/${APP_NAME}_v0.4.1-mac.zip"
+rm -f "$ROOT/dist/${APP_NAME}_v0.4.2-mac.zip"
+ditto -c -k --keepParent "$BUNDLE" "$ROOT/dist/${APP_NAME}_v0.4.2-mac.zip"
 echo
 echo "完成: $BUNDLE"
-echo "配布ZIP: $ROOT/dist/${APP_NAME}_v0.4.1-mac.zip"
+echo "配布ZIP: $ROOT/dist/${APP_NAME}_v0.4.2-mac.zip"

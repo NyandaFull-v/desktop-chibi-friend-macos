@@ -22,6 +22,17 @@ PY
 swift build -c release
 echo "Swiftビルド: 正常"
 
+python3 - <<'PY'
+from pathlib import Path
+source = Path('Sources/DesktopChibiFriendMac/PetController.swift').read_text(encoding='utf-8')
+start = source.index('private func collect(_ object: WorldObject)')
+end = source.index('private func beginChase()', start)
+collect = source[start:end]
+for required in ('velocity = .zero', 'targetSurface = nil', 'phantomClimb = false', 'mode = .normal'):
+    assert required in collect, f'取得停止処理が不足: {required}'
+print('取得停止の回帰検査: 正常')
+PY
+
 if [ -d "dist/デスクトップちびフレンド.app" ]; then
   codesign --verify --deep --strict "dist/デスクトップちびフレンド.app"
   plutil -lint "dist/デスクトップちびフレンド.app/Contents/Info.plist"
