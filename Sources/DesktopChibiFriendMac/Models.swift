@@ -1,7 +1,7 @@
 import AppKit
 import Foundation
 
-let appDisplayVersion = "0.4.1-mac"
+let appDisplayVersion = "0.4.2-mac"
 
 enum Pose: String, CaseIterable {
     case stand, walk, dash, sit, sleep, fall, climb, joy, dice, dig, petting, look, trip

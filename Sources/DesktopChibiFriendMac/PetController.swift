@@ -449,7 +449,13 @@ final class PetController: NSObject {
     private func collect(_ object: WorldObject) {
         let kind = object.kind, index = object.itemIndex
         removeObject(object)
+
+        // 取得時に召喚地点へ向かうダッシュ・落下・登り予約をすべて解除する。
         velocity = .zero
+        targetX = petPanel.frame.minX
+        targetSurface = nil
+        phantomClimb = false
+        mode = .normal
         if kind == .coin {
             profile.coins += 1
             setPose(.joy)
