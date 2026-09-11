@@ -13,7 +13,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Check out source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Validate macOS project
         run: bash validate-macos.sh
@@ -22,7 +22,7 @@ jobs:
         run: bash build-macos.sh
 
       - name: Prepare release archive
-        run: cp "dist/デスクトップちびフレンド_v0.4.1-mac.zip" "DesktopChibiFriend-macOS-v0.4.1.zip"
+        run: cp "dist/デスクトップちびフレンド_v0.4.2-mac.zip" "DesktopChibiFriend-macOS-v0.4.2.zip"
 
       - name: Publish release archive
         env:
@@ -30,11 +30,11 @@ jobs:
         run: |
           if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
             gh release upload "$GITHUB_REF_NAME" \
-              "DesktopChibiFriend-macOS-v0.4.1.zip" \
+              "DesktopChibiFriend-macOS-v0.4.2.zip" \
               --clobber
           else
             gh release create "$GITHUB_REF_NAME" \
-              "DesktopChibiFriend-macOS-v0.4.1.zip" \
-              --title "デスクトップちびフレンド macOS v0.4.1" \
+              "DesktopChibiFriend-macOS-v0.4.2.zip" \
+              --title "デスクトップちびフレンド macOS v0.4.2" \
               --notes-file RELEASE_NOTES.md
           fi
